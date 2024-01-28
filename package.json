@@ -2,12 +2,12 @@
   "scripts": {
     "test": "jest --reporters=jest-junit",
     "build": "echo \"Dummy build script for Autocode\"",
-    "compile": "node-sass src/styles/styles.scss src/dist/styles.css",
-    "prefix": "npx postcss src/dist/styles.css -o src/dist/styles.css",
-    "min": "postcss src/dist/styles.css -o src/dist/styles.min.css",
-    "unused": "purgecss --css src/dist/styles.css --content src/index.html",
+    "compile": "node-sass src/styles/style.scss src/dist/style.css",
+    "prefix": "npx postcss src/dist/style.css -o src/dist/style.css",
+    "min": "postcss src/dist/style.css -o src/dist/style.min.css",
+    "unused": "purgecss --css src/dist/style.css --content src/index.html",
     "lint": "stylelint ./src/styles/*.scss --fix && stylelint ./src/styles/*.scss",
-    "prettier": "prettier --write src/styles/*.scss && prettier --write \"src/dist/styles.css\"",
+    "prettier": "prettier --write src/styles/*.scss && prettier --write \"src/dist/style.css\"",
     "prod": "npm run compile && npm run prefix && npm run unused && npm run min"
   },
   "devDependencies": {
