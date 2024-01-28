@@ -1,0 +1,53 @@
+.header {
+  &-text {
+    height: 100%;
+    position: absolute;
+    top: 60%;
+    left: 10%;
+    transform: translateY(-50%);
+    text-align: center;
+    gap: 20px;
+
+    &__image {
+      width: 100%;
+      animation: animate 2s ease-in-out infinite;
+    }
+
+    @keyframes animate {
+      from {
+        transform: rotateY(0) scale(1);
+      }
+
+      25% {
+        transform: rotateY(0) scale(1);
+      }
+
+      50% {
+        transform: rotateY(180deg) scale(1.2);
+      }
+
+      75% {
+        transform: rotateY(180deg) scale(1.2);
+      }
+
+      to {
+        transform: rotateY(360deg) scale(1);
+      }
+    }
+
+    &__title {
+      @include ff('Roboto', 65px, 700, normal);
+      text-transform: uppercase;
+      color: $white;
+    }
+
+    &__paragraph {
+      @include ff('Source Sans pro', 24px, 400, normal);
+      text-align: left;
+      color: $white;
+      line-height: 32px;
+      letter-spacing: 2px;
+      margin-top: 20px;
+    }
+  }
+}

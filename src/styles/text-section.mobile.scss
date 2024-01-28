@@ -1,0 +1,25 @@
+@media screen and (max-width: 832px) {
+  .section {
+    padding: 0 20px 0 20px;
+
+    &-about {
+      padding: 50px 0 50px 0;
+
+      &__title {
+        & h2 {
+          font-size: 30px;
+          line-height: 35px;
+
+          & br {
+            display: block;
+          }
+        }
+
+        & p {
+          letter-spacing: 0;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

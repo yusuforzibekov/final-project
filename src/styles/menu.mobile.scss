@@ -1,0 +1,19 @@
+@media screen and (max-width: 832px) {
+  .header {
+    &-text {
+      padding: 50px 0 100px 0;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -45%);
+
+      &__title {
+        font-size: 45px;
+      }
+
+      &__paragraph {
+        text-align: center;
+        font-size: 18px;
+      }
+    }
+  }
+}

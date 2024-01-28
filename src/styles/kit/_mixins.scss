@@ -1,0 +1,14 @@
+@mixin flex-boxes($flex_direction, $justify_content, $align_items, $flex_wrap) {
+    display: flex;
+    flex-direction: $flex_direction;
+    justify-content: $justify_content;
+    align-items: $align_items;
+    flex-wrap: $flex_wrap;
+}
+
+@mixin ff($font_family, $font_size, $font_weight, $font_style) {
+    font-family: $font_family;
+    font-size: $font_size;
+    font-weight: $font_weight;
+    font-style: $font_style;
+}
