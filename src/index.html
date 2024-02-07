@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Linking styles-->
+    <link rel="stylesheet" href="dist/style.css">
+    <!--Linking favicons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="../src/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../src/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../src/assets/favicon/favicon-16x16.png">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="header" id="projects">
+        <nav class="header-navbar">
+            <a href="" class="header-navbar__brand">project</a>
+
+            <div class="header-burger">
+                <span class="header-burger__item"></span>
+                <span class="header-burger__item"></span>
+                <span class="header-burger__item"></span>
+            </div>
+
+            <ul class="header-navbar__items">
+                <li class="header-navbar__items_list"><a href="#projects">projects</a></li>
+                <li class="header-navbar__items_list"><a href="#about">about us</a></li>
+                <li class="header-navbar__items_list"><a href="#stories">stories</a></li>
+                <li class="header-navbar__items_list"><a href="#contact">contact</a></li>
+            </ul>
+        </nav>
+        <article class="header-text">
+            <div class="header-text__image"><img src="assets/header-banner.png" alt=""></div>
+            <h2 class="header-text__title">your <br> headline <br> here</h2>
+            <p class="header-text__paragraph">Lorem ipsum dolor sit amet, consectetur <br> adipiscing elit sed do
+                eiusmod.</p>
+        </article>
+
+        <div id="top">↑</div>
+    </header>
+
+    <section class="section" id="about">
+        <div class="section-about">
+            <div class="section-about__title">
+                <h2>This is the Section Headline,<br>Continues to Two Lines</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit sed do eiusmod.</p>
+            </div>
+
+            <div class="section-about__cards">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do<br>eiusmod tempor incididunt ut
+                    labore et dolore magna<br>aliqua. Ut enim ad minim veniam, quis nostrud exercitation<br>ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat.<br>Duis aute irure dolor in reprehenderit in
+                    voluptate velit esse<br>cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat<br>cupidatat non proident, sunt in culpa qui officia deserunt<br>mollit anim id est
+                    laborum. Sed ut perspiciatis unde omnis.</p>
+
+                <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi<br>ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in<br>reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat<br>nulla pariatur. Excepteur sint occaecat cupidatat non proident,<br>sunt in culpa qui
+                    officia deserunt mollit anim id est laborum.</p>
+            </div>
+
+            <a href="" class="section-about__more">read more</a>
+        </div>
+    </section>
+
+    <main id="stories" class="main">
+        <div class="main-stories">
+            <h1 class="main-stories__title">Learn more<br>about our culture...</h1>
+            <div class="main-stories__more">
+                <div class="icon">
+                    <span>&#9654;</span>
+                </div>
+            </div>
+            <p class="main-stories__paragraph">Duis aute irure dolor in reprehenderit in voluptate<br>velit esse cillum
+                dolore eu fugiat nulla pariatur
+            </p>
+        </div>
+    </main>
+
+    <footer id="contact" class="footer">
+        <div class="footer-items">
+            <div class="footer-items__item1">
+                <img src="assets/Robo_logo@3x1.png" alt="">
+                <h6>project</h6>
+            </div>
+            <div class="footer-items__item2">
+                <p>
+                    123 Street, <br> Anytown, USA 12345
+                </p>
+                <a href="mailto:hello@website.com">hello@website.com</a>
+            </div>
+        </div>
+        <div class="footer-items__last_item">
+            <p>© 2021 Project. All rights reserved</p>
+        </div>
+    </footer>
+
+
+    <script src="js/script.js"></script>
+    <script src="js/jquery-3.2.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+
+            $('.header-navbar__items_list a').click(function (e) {
+                e.preventDefault();
+                const menuHeight = $('.header-navbar__items_list').innerHeight();
+                const id = $(this).attr('href');
+                const target = $(id).offset().top;
+
+
+                $('html').animate({
+                    scrollTop: target
+                }, 100)
+            })
+
+            $('#top').click(function (e) {
+                e.preventDefault();
+                $('html').animate({
+                    scrollTop: 0
+                }, 100)
+            })
+
+            $(window).scroll(() => {
+                const scrolled = $(window).scrollTop();
+
+                if (scrolled > 100) {
+                    $('#top').fadeIn();
+                } else {
+                    $('#top').fadeOut();
+                }
+
+                if (scrolled > 100) {
+                    $('.header-navbar').addClass('sticky');
+                } else {
+                    $('.header-navbar').removeClass('sticky');
+                }
+            })
+
+            burger.addEventListener('click', () => {
+                if ($('.header-navbar').hasClass('open')) {
+                    $('body').css('overflowY', 'hidden');
+                } else {
+                    $('body').css('overflowY', 'visible');
+                }
+            });
+
+            link.forEach(link => {
+                link.addEventListener('click', () => {
+                    if ($('.header-navbar').hasClass('open')) {
+                        $('body').css('overflowY', 'hidden');
+                    } else {
+                        $('body').css('overflowY', 'visible');
+                    }
+                });
+            });
+        });
+
+        const burger = document.querySelector('.header-burger');
+        const nav = document.querySelector('.header-navbar');
+        const link = document.querySelectorAll('.header-navbar__items_list a');
+
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('open');
+        });
+
+        link.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('open');
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>

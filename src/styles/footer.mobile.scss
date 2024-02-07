@@ -1,0 +1,18 @@
+@media screen and (max-width: 832px) {
+  .footer {
+    padding: 40px 30px 40px 30px;
+    @include flex-boxes(column, center, center, nowrap);
+
+    &-items {
+      gap: 20px;
+      justify-content: center;
+      text-align: center;
+
+      &__last_item {
+        align-self: center;
+        text-align: center;
+        margin-top: 20px;
+      }
+    }
+  }
+}

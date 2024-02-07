@@ -1,0 +1,60 @@
+@media screen and (max-width: 832px) {
+  .header {
+    @include flex-boxes(column, space-between, center, nowrap);
+    position: relative;
+    background: url('../assets/pexels-pavel-danilyuk-8294624 1.png') no-repeat
+      center center / cover;
+
+    &-burger {
+      display: block;
+      z-index: 999;
+    }
+
+    &-navbar {
+      &__brand {
+        padding-left: 0;
+        z-index: 999;
+      }
+
+      &__items {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        min-height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(10px);
+        @include flex-boxes(column, center, center, nowrap);
+        transition: 0.3s;
+        transform: translateX(-100%);
+        padding: 0;
+        z-index: 1;
+      }
+
+      &.open {
+        & .header-navbar__items {
+          transform: translateX(0);
+        }
+
+        & .header-burger__item:nth-child(1) {
+          background: $white;
+          transform: translate(2px, 8px) rotate(45deg);
+        }
+
+        & .header-burger__item:nth-child(2) {
+          background: $white;
+          transform: rotate(-45deg);
+        }
+
+        & .header-burger__item:nth-child(3) {
+          background: $white;
+          transform: translate(-2px, -9px) rotate(45deg);
+        }
+      }
+    }
+  }
+
+  br {
+    display: none;
+  }
+}

@@ -1,0 +1,60 @@
+.header {
+  width: 100%;
+  min-height: 100vh;
+  background: url('../assets/bg-image.jpg') no-repeat center center/cover;
+  @include flex-boxes(column, space-between, flex-start, wrap);
+
+  &-navbar {
+    width: 100%;
+    @include flex-boxes(row, space-around, center, auto);
+    padding: 27px 0 27px 0;
+    text-transform: uppercase;
+
+    &__brand {
+      @include ff('Source Sans pro', 20px, 600, normal);
+      color: $white;
+      letter-spacing: 1.5px;
+      padding-left: 100px;
+    }
+
+    &__items {
+      margin: 0 auto;
+      display: flex;
+      padding-right: 100px;
+      gap: 30px;
+
+      &_list {
+        & a {
+          color: $white;
+          @include ff('Source Sans pro', 14px, 400, normal);
+          letter-spacing: 3px;
+          position: relative;
+
+          &:hover,
+          &:focus {
+            color: $blue;
+
+            &::before {
+              width: 100%;
+              background: $blue;
+            }
+          }
+
+          &::before {
+            content: ' ';
+            position: absolute;
+            left: 50%;
+            bottom: -5px;
+            transform: translateX(-50%);
+            width: 0;
+            height: 1px;
+            background: $white;
+            transition:
+              opacity 0.5s,
+              width 0.3s;
+          }
+        }
+      }
+    }
+  }
+}
