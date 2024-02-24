@@ -13,16 +13,10 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Build site
-      run: |
-        # Add commands to build your site here
-        # For example, if you're using Jekyll:
-        # bundle exec jekyll build
-
     - name: Deploy
       run: |
         mkdir gh-pages
-        cp -r ./src/* ./gh-pages
+        cp -r ./src/index.html* ./gh-pages
         cd gh-pages
         git init
         git config user.name "${{ github.actor }}"
